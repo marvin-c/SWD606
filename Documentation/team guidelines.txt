@@ -1,0 +1,42 @@
+
+**  Please follow these guidelines to ensure minimal errors on working on the project.
+** important
+*- not important
+
+- Before starting to make changes on the project, it is recommended to do git pull first to get all updates from the remote main repo.
+
+- Let the team know what are you working on so we avoid duplicate tasks.
+
+- If anything needs to add and it is necessary, please add.
+
+- We apply KISS as much as possible.
+
+- If you're stuck on something. Shout out so we can un-stuck you.
+
+- Please make descriptive concise description when doing a commit and pull request tasks. This will be easier to track down what changes made on that version.
+
+- Make versions on as often as possible, ideally for every milestone of the task. It will be easier for us to revert back to previous version if there is an error.
+
+- It would be nice after you updated the main repo, please let the team know.
+
+- If unsure of the merge, please let the team know.
+
+- **IMPORTANT** When working on a task, make sure no one is working on it. The team values the time and effort for each one. If you want to help, communicate.
+
+- Check trello regularly on the tasks.
+
+- Your opinion matters, if its make sense.
+
+- We are using Agile/Scrum, we are flexible on the flow.
+
+- We all makes mistakes, don't be embarassed to admit it.
+
+- If you know somethings not right, let the team know right away before its too late.
+
+- if you forgot the git commands, please refer to Git cheat sheet.pdf first available on our repo.
+
+- if unsure of the git command. Let the team know.
+
+- due to the possible short of time to do this project, if possible, any of us should be reachable and available so if we have emergency meetings, we can do as soon as possible.
+
+- *- Taco bell on every thursday, it is recommended to join the team for catch up on anything and have fun.
