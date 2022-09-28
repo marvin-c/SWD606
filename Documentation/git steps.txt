@@ -29,6 +29,22 @@ Steps
 8. create a pull request
 9. then merge the changes
 
-
-
-
+** another scenario ** 
+test.txt
+added line yourname on the txt on line 1
+git add test.txt
+added line lastname on the txt on line 2
+git add test.txt
+git commit -m "message" - creates version version 8e4f8es5
+added line 3
+added line 4
+git add test.txt
+git commit -m "message" - creates version 4637hfhn
+added line 10
+added line 11
+added line 14
+git add text.txt
+git commit -m "message" creates version 45fheu
+git push
+pull request 
+merge
