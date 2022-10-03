@@ -3,7 +3,7 @@ Preparation
 1. install latest python
 2. install pip with python install pip
 2. pip or pip3 install pipenv
-- on linux, echo 'export PATH="/home/mcjev/.local/bin:$PATH"' >> ~/.bashrc
+- on linux, echo 'export PATH="/home/mcjev/.local/bin:$PATH"' >> ~/.bashrc, then restart pc
 3. visual code as ide
 
 4. create a directory
