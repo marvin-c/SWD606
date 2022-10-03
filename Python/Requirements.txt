@@ -1,0 +1,18 @@
+Preparation
+
+1. install latest python
+2. install pip with python install pip
+2. pip or pip3 install pipenv
+- on linux, echo 'export PATH="/home/mcjev/.local/bin:$PATH"' >> ~/.bashrc
+3. visual code as ide
+
+4. create a directory
+5. go to the directory and issue command pipenv install django
+6. go to python interpreter inside the virtual environment with pipenv shell
+7. while inside the pipenv shell, to start a new project, issue command django-admin startproject <APPNAME> .
+
+
+Create a server and run it
+python manage.py runserver
+
+Access the app via browser on http://localhost:8000
