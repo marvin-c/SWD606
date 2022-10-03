@@ -12,3 +12,9 @@ def say_hello(request):
     # return render(request, 'hello.html')
     
     return render(request, 'hello.html', { 'name': 'Marvin' })
+
+def paulo(request):
+    return render(request, 'paulo.html')
+
+def rocelle(request):
+    return render(request, 'rocelle.html')
