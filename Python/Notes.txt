@@ -1,0 +1,71 @@
+Preparation
+
+1. install latest python
+2. install pip with python install pip
+2. pip or pip3 install pipenv
+- on linux, echo 'export PATH="/home/mcjev/.local/bin:$PATH"' >> ~/.bashrc
+3. visual code as ide
+
+4. create a directory
+5. go to the directory and issue command pipenv install django
+6. go to python interpreter inside the virtual environment with pipenv shell
+7. while inside the pipenv shell, to start a new project, issue command django-admin startproject storefront .
+
+
+Create a server and run it
+python manage.py runserver
+
+To create an app module
+python manage.py startapp <APPNAME>
+# python manage.py startapp playground
+# python manage.py startapp vma
+
+Everytime an app module is created, it needs to register it on the settings.py. Add the appname under INSTALLED_APPS = [].
+# In this case, we add "playground" under /storefront/settings.py
+In this case, we add "playground" under /vma/settings.py
+
+
+Views
+Views located on <APPNAME>/views.py
+add functions to it.
+
+After adding functions, it needs to map URLs to views
+
+Mapping URLs to views
+under <APPNAME> add <FILENAME.py> file. In this case, we add urls.py
+
+
+Templates
+- this are the html files
+1. add templates folder to <APPNAME>. In this case, add templates folder to playground folder
+2. add any .html files under templates.
+
+Debugging
+1. click on debugging icon in vscode
+2. click create a launch.json file
+3. from the list, choose Django
+4. add "9000" after "runserver" under "args":[].
+5. on vscode, put a desired breakpoint on the code.
+6. on vscode, click start debugging.
+7. on the browser, run the current url desired to debug on.
+8. on the vscode, you'll see that the breakpoint has been activated and ready for debugging investigation
+
+Install django-debug-toolbar
+for more resources, https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
+1. to install, python -m pip install django-debug-toolbar
+3. add 'debug_toolbar' under INSTALLED_APPS = [] on <APPNAME>/settings.py. In this case, under storefront/settings.py
+4. add "path('__debug__/', include('debug_toolbar.urls'))," under urlpatterns =[] to <APPNAME>/urls.py. In this case, under storefront/settings.py.
+5. add "import debug_toolbar" under urlpatterns=[] section on <APPNAME>/urls.py. In this case, under storefront/urls.py
+6. add ""debug_toolbar.middleware.DebugToolbarMiddleware"," under MIDDLEWARE = [] section on the same file from number 4. In this case, storefront/settings.py. Add it on the first index of array.
+7. on the same file on number 6, add below on anywhere
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
+8. Complete tutorials on how to install and configure on https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
+
+
+Data Model
+
+Assosiation class
