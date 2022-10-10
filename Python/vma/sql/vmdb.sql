@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
--- Host: localhost    Database: vms
+-- Host: localhost    Database: visitor_management
 -- ------------------------------------------------------
--- Server version	8.0.29
+-- Server version	8.0.30
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,8 +23,16 @@ DROP TABLE IF EXISTS `employee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `employee` (
-  `idemployee` int NOT NULL,
-  PRIMARY KEY (`idemployee`)
+  `employee_id` int NOT NULL,
+  `employee_fname` varchar(45) DEFAULT NULL,
+  `employee_lname` varchar(45) DEFAULT NULL,
+  `department` varchar(45) DEFAULT NULL,
+  `company` varchar(45) DEFAULT NULL,
+  `phone` int DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `gender` char(1) DEFAULT NULL,
+  PRIMARY KEY (`employee_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,28 +46,6 @@ LOCK TABLES `employee` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `relationships`
---
-
-DROP TABLE IF EXISTS `relationships`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `relationships` (
-  `idrelationships` int NOT NULL,
-  PRIMARY KEY (`idrelationships`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `relationships`
---
-
-LOCK TABLES `relationships` WRITE;
-/*!40000 ALTER TABLE `relationships` DISABLE KEYS */;
-/*!40000 ALTER TABLE `relationships` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `visitors`
 --
 
@@ -67,8 +53,13 @@ DROP TABLE IF EXISTS `visitors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `visitors` (
-  `idvisitors` int NOT NULL,
-  PRIMARY KEY (`idvisitors`)
+  `visitors_id` int NOT NULL,
+  `visitors_fname` varchar(45) DEFAULT NULL,
+  `visitors_lname` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `phone` int DEFAULT NULL,
+  `organization` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`visitors_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -89,8 +80,17 @@ DROP TABLE IF EXISTS `visits`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `visits` (
-  `idvisits` int NOT NULL,
-  PRIMARY KEY (`idvisits`)
+  `badge_id` int NOT NULL,
+  `visitors_id` int DEFAULT NULL,
+  `employee_id` int DEFAULT NULL,
+  `reason_of_visit` varchar(60) DEFAULT NULL,
+  `visitor_type` varchar(45) DEFAULT NULL,
+  `vehicle_rego` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`badge_id`),
+  KEY `visitors_idd_idx` (`visitors_id`),
+  KEY `employee_idd_idx` (`employee_id`),
+  CONSTRAINT `employee_idd` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`),
+  CONSTRAINT `visitors_idd` FOREIGN KEY (`visitors_id`) REFERENCES `visitors` (`visitors_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -112,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-09 14:57:07
+-- Dump completed on 2022-10-10 23:13:30
